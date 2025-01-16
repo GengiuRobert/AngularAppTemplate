@@ -1,1 +1,14 @@
-<p>navbar works!</p>
+<nav [class.sticky]="appService.getComponentConfig()?.sticky"
+    [class.transparent]="appService.getComponentConfig()?.transparent">
+    <ul>
+        @for(link of appService.getComponentConfig()?.links; track link.id)
+        {
+        
+        @if(link.enabled === true)
+        {
+        <li> <a [href]="link.url">{{ link.name }}</a> </li>
+        }
+        
+        }
+    </ul>
+</nav>

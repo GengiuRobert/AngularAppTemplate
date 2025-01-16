@@ -2,21 +2,25 @@
     "navbar": {
         "links": [
             {
+                "id": 1,
                 "name": "Home",
                 "url": "/",
                 "enabled": true
             },
             {
+                "id": 2,
                 "name": "About Us",
                 "url": "/about",
                 "enabled": true
             },
             {
+                "id": 3,
                 "name": "Services",
                 "url": "/services",
                 "enabled": true
             },
             {
+                "id": 4,
                 "name": "Contact",
                 "url": "/contact",
                 "enabled": true
@@ -24,43 +28,95 @@
         ],
         "sticky": true,
         "transparent": false
-    }, 
-    
-    "footer": {
-        "sticky":false,
-        "transparent":false
     },
-
+    "footer": {
+        "sticky": false,
+        "transparent": false
+    },
     "sidebar": {
         "enabled": true,
-         "links":{
-            "/" :[
-                {"name": "Welcome", "url": "/welcome", "enabled":true},
-                {"name": "Features", "url": "/features", "enabled":true}
+        "links": {
+            "/": [
+                {
+                    "id": 1,
+                    "name": "Welcome",
+                    "url": "/welcome",
+                    "enabled": true
+                },
+                {
+                    "id": 2,
+                    "name": "Features",
+                    "url": "/features",
+                    "enabled": true
+                }
             ],
-            "/about":[
-                {"name": "History", "url": "/history", "enabled":true},
-                {"name": "Our Team", "url": "/team", "enabled":true}
+            "/about": [
+                {
+                    "id": 1,
+                    "name": "History",
+                    "url": "/history",
+                    "enabled": true
+                },
+                {
+                    "id": 2,
+                    "name": "Our Team",
+                    "url": "/team",
+                    "enabled": true
+                }
             ],
-            "/services":[
-                {"name": "Web Development", "url": "/web", "enabled":true},
-                {"name": "Mobile Development", "url": "/mobile", "enabled":true}
+            "/services": [
+                {
+                    "id": 1,
+                    "name": "Web Development",
+                    "url": "/web",
+                    "enabled": true
+                },
+                {
+                    "id": 2,
+                    "name": "Mobile Development",
+                    "url": "/mobile",
+                    "enabled": true
+                }
             ],
-            "/contact":[
-                {"name": "Email", "url": "/email", "enabled":true},
-                {"name": "Phone", "url": "/phone", "enabled":true}
+            "/contact": [
+                {
+                    "id": 1,
+                    "name": "Email",
+                    "url": "/email",
+                    "enabled": true
+                },
+                {
+                    "id": 2,
+                    "name": "Phone",
+                    "url": "/phone",
+                    "enabled": true
+                }
             ]
-         }
+        }
     },
-
-    "languageSwitcher":{
-        "enabled" : true,
-        "language" : [
-            {"name": "English", "enabled": true},
-            {"name": "Italian", "enabled": true},
-            {"name": "Romanian", "enabled": true},
-            {"name": "Spanish", "enabled": false},
-            {"name": "German", "enabled": false}
+    "languageSwitcher": {
+        "enabled": true,
+        "language": [
+            {
+                "name": "English",
+                "enabled": true
+            },
+            {
+                "name": "Italian",
+                "enabled": true
+            },
+            {
+                "name": "Romanian",
+                "enabled": true
+            },
+            {
+                "name": "Spanish",
+                "enabled": false
+            },
+            {
+                "name": "German",
+                "enabled": false
+            }
         ]
     }
 }
