@@ -1,1 +1,6 @@
-<p>footer works!</p>
+<footer 
+  [class.sticky]="appService.getComponentConfig('footer')?.sticky"
+  [class.transparent]="appService.getComponentConfig('footer')?.transparent"
+>
+  <p>Designed by Gengiu Robert-Constantin &#64;2025</p>
+</footer>
