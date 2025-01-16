@@ -11,12 +11,13 @@ import { NgFor } from '@angular/common';
 })
 
 export class NavbarComponent implements OnInit {
-  isMenuOpen : boolean = true;
-  
+
   constructor(public appService: AppConfigService) { }
 
   ngOnInit(): void {
-    this.appService.setComponent('navbar');
+
+    this.appService.getComponentConfig('navbar');
+
   }
 
 }

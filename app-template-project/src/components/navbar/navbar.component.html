@@ -1,7 +1,7 @@
-<nav [class.sticky]="appService.getComponentConfig()?.sticky"
-    [class.transparent]="appService.getComponentConfig()?.transparent">
-    <ul [class.open]="isMenuOpen">
-        @for(link of appService.getComponentConfig()?.links; track link.id)
+<nav [class.sticky]="appService.getComponentConfig('navbar')?.sticky"
+    [class.transparent]="appService.getComponentConfig('navbar')?.transparent">
+    <ul>
+        @for(link of appService.getComponentConfig('navbar')?.links; track link.id)
         {
         
         @if(link.enabled === true)

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { AppConfigService } from '../../services/appconfig.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,6 +8,12 @@ import { Component } from '@angular/core';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css'
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit{
+
+  constructor(public appService : AppConfigService){}
+
+  ngOnInit(): void {
+    this.appService.getComponentConfig('footer');
+  }
 
 }
