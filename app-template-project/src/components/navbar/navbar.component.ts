@@ -15,7 +15,6 @@ export class NavbarComponent implements OnInit{
 
   ngOnInit(): void {
     const config = this.appService.getConfig();
-    console.log("Loaded config",config);
   }
 
 
