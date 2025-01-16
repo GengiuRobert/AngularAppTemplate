@@ -1,0 +1,66 @@
+{
+    "navbar": {
+        "links": [
+            {
+                "name": "Home",
+                "url": "/",
+                "enabled": true
+            },
+            {
+                "name": "About Us",
+                "url": "/about",
+                "enabled": true
+            },
+            {
+                "name": "Services",
+                "url": "/services",
+                "enabled": true
+            },
+            {
+                "name": "Contact",
+                "url": "/contact",
+                "enabled": true
+            }
+        ],
+        "sticky": true,
+        "transparent": false
+    }, 
+    
+    "footer": {
+        "sticky":false,
+        "transparent":false
+    },
+
+    "sidebar": {
+        "enabled": true,
+         "links":{
+            "/" :[
+                {"name": "Welcome", "url": "/welcome", "enabled":true},
+                {"name": "Features", "url": "/features", "enabled":true}
+            ],
+            "/about":[
+                {"name": "History", "url": "/history", "enabled":true},
+                {"name": "Our Team", "url": "/team", "enabled":true}
+            ],
+            "/services":[
+                {"name": "Web Development", "url": "/web", "enabled":true},
+                {"name": "Mobile Development", "url": "/mobile", "enabled":true}
+            ],
+            "/contact":[
+                {"name": "Email", "url": "/email", "enabled":true},
+                {"name": "Phone", "url": "/phone", "enabled":true}
+            ]
+         }
+    },
+
+    "languageSwitcher":{
+        "enabled" : true,
+        "language" : [
+            {"name": "English", "enabled": true},
+            {"name": "Italian", "enabled": true},
+            {"name": "Romanian", "enabled": true},
+            {"name": "Spanish", "enabled": false},
+            {"name": "German", "enabled": false}
+        ]
+    }
+}
