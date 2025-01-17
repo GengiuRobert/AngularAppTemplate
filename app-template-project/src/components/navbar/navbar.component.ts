@@ -20,4 +20,8 @@ export class NavbarComponent implements OnInit {
 
   }
 
+  onNavClick(route: string): void {
+    this.appService.setCurrentRoute(route); 
+  }
+
 }

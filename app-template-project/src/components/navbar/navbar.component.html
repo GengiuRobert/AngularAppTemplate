@@ -6,7 +6,7 @@
         
         @if(link.enabled === true)
         {
-        <li> <a [href]="link.url">{{ link.name }}</a> </li>
+        <li> <a (click)="onNavClick(link.url)" [href]="link.url">{{ link.name }}</a> </li>
         }
 
         }

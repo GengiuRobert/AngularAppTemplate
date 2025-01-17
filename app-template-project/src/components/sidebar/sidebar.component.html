@@ -1,1 +1,11 @@
-<p>sidebar works!</p>
+<aside>
+    <ul>
+        @for(link of sidebarLinks(); track link.id) {
+            @if(link.enabled === true) {
+                <li>
+                    <a [href]="link.url">{{ link.name }}</a>
+                </li>
+            }
+        }
+    </ul>
+</aside>
