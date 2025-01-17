@@ -1,6 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { AppConfigService } from '../../services/appconfig.service';
-import { RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -12,19 +13,27 @@ import { RouterModule } from '@angular/router';
 
 export class NavbarComponent implements OnInit {
 
-  constructor(public appService: AppConfigService) { }
+  constructor(public appService: AppConfigService, private router: Router) { }
 
   ngOnInit(): void {
 
     this.appService.getComponentConfig('navbar');
+    this.appService.setCurrentRoute(this.router.url);
+
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.appService.setCurrentRoute(event.urlAfterRedirects);
+      });
 
   }
 
   onNavClick(route: string): void {
-    this.appService.setCurrentRoute(route); 
+    this.router.navigateByUrl(route);
+    this.appService.setCurrentRoute(route);
   }
 
-  isActive(route: string): boolean{
+  isActive(route: string): boolean {
     return this.appService.getCurrentRoute() === route;
   }
 
