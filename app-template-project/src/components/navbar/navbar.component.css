@@ -45,6 +45,13 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
+nav ul li a.active {
+    color: #007bff; 
+    font-weight: bold; 
+    transform: scale(1.1); 
+    transition: all 0.3s ease; 
+}
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column;

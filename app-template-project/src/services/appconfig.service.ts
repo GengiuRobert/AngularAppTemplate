@@ -14,6 +14,10 @@ export class AppConfigService {
         this.currentRoute.set(route);
     }
 
+    getCurrentRoute(): string{
+        return this.currentRoute();
+    }
+
     getSidebarLinks = computed(() => {
         const sidebarConfig = this.getComponentConfig('sidebar');
         return sidebarConfig.links[this.currentRoute()] || [];

@@ -1,11 +1,11 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { AppConfigService } from '../../services/appconfig.service';
-import { NgFor } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-navbar',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
@@ -22,6 +22,10 @@ export class NavbarComponent implements OnInit {
 
   onNavClick(route: string): void {
     this.appService.setCurrentRoute(route); 
+  }
+
+  isActive(route: string): boolean{
+    return this.appService.getCurrentRoute() === route;
   }
 
 }

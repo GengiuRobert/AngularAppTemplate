@@ -1,14 +1,12 @@
 <nav [class.sticky]="appService.getComponentConfig('navbar')?.sticky"
-    [class.transparent]="appService.getComponentConfig('navbar')?.transparent">
+     [class.transparent]="appService.getComponentConfig('navbar')?.transparent">
     <ul>
-        @for(link of appService.getComponentConfig('navbar')?.links; track link.id)
-        {
-        
-        @if(link.enabled === true)
-        {
-        <li> <a (click)="onNavClick(link.url)" [href]="link.url">{{ link.name }}</a> </li>
-        }
-
+        @for(link of appService.getComponentConfig('navbar')?.links; track link.id) {
+            @if(link.enabled === true) {
+                <li>
+                    <a [routerLink]="link.url" [routerLinkActive]="'active'">{{ link.name }}</a>
+                </li>
+            }
         }
     </ul>
 </nav>
