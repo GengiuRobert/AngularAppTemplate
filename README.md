@@ -55,7 +55,7 @@ This project serves as a template for creating modern and responsive Angular app
 # Project deployment link
 
 You can try on your own my project with this link:
- `https://gengiurobert.github.io/AngularAppTemplate/`
+ `(https://gengiurobert.github.io/AngularAppTemplate/)`
 
 ---
 
