@@ -52,6 +52,37 @@ This project serves as a template for creating modern and responsive Angular app
 
 ---
 
+# Project deployment link
+
+You can try on your own my project with this link:
+ `https://gengiurobert.github.io/AngularAppTemplate/`
+
+---
+
+# Project Setup
+
+To clone this project, run the following command in your terminal:
+
+```bash
+git clone https://github.com/GengiuRobert/AngularAppTemplate
+```
+
+This will create a local copy of the project on your machine. After cloning, navigate to the project directory and install the required dependencies with:
+
+```bash
+npm install
+```
+
+Then, you can run the project with:
+
+```bash
+ng serve
+```
+
+The application will be available at `http://localhost:4200` in your browser.
+
+---
+
 ## Technologies Used
 
 - Angular 19
@@ -64,4 +95,3 @@ This project serves as a template for creating modern and responsive Angular app
 
 ## Author
 Designed and developed by **Gengiu Robert-Constantin**.
-
