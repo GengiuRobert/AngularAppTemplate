@@ -1,4 +1,5 @@
 import { computed, Injectable, signal } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
 import config from "../assets/config.json";
 
 @Injectable({ providedIn: 'root' })
@@ -6,7 +7,13 @@ export class AppConfigService {
     private appConfigSignal = signal<any>(config);
     private currentRoute = signal<string>('/');
     private isDropdownOpen = signal<boolean>(false);
-    private selectedLanguage = signal<string>('English');
+    private selectedLanguage = signal<string>('en');
+
+    constructor(private translate: TranslateService) {
+        this.translate.setDefaultLang('en'); 
+        this.translate.use('en'); 
+    }
+
 
     getComponentConfig(componentName: "navbar" | "footer" | "sidebar" | "languageSwitcher"): any {
         return this.appConfigSignal()?.[componentName];
@@ -41,6 +48,7 @@ export class AppConfigService {
     setLanguage(languageSelected: string): void {
         this.selectedLanguage.set(languageSelected);
         this.isDropdownOpen.set(false);
+        this.translate.use(languageSelected);
     }
 
     getLanguage(): string {

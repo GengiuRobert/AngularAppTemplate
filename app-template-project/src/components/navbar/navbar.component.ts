@@ -1,12 +1,14 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppConfigService } from '../../services/appconfig.service';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
+import { TitleCasePipe, UpperCasePipe } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-navbar',
-  imports: [RouterModule],
+  imports: [RouterModule,TranslateModule,UpperCasePipe],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

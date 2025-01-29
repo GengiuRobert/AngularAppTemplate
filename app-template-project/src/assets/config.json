@@ -4,24 +4,28 @@
             {
                 "id": 1,
                 "name": "Home",
+                "key": "HOME",
                 "url": "/",
                 "enabled": true
             },
             {
                 "id": 2,
                 "name": "About Us",
+                "key": "ABOUT_US",
                 "url": "/about",
                 "enabled": true
             },
             {
                 "id": 3,
                 "name": "Services",
+                "key": "SERVICES",
                 "url": "/services",
                 "enabled": true
             },
             {
                 "id": 4,
                 "name": "Contact",
+                "key": "CONTACT",
                 "url": "/contact",
                 "enabled": true
             }
