@@ -1,12 +1,31 @@
 <nav [class.sticky]="appService.getComponentConfig('navbar')?.sticky"
-     [class.transparent]="appService.getComponentConfig('navbar')?.transparent">
+    [class.transparent]="appService.getComponentConfig('navbar')?.transparent">
     <ul>
         @for(link of appService.getComponentConfig('navbar')?.links; track link.id) {
-            @if(link.enabled === true) {
-                <li>
-                    <a [routerLink]="link.url" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">{{ link.name }}</a>
-                </li>
-            }
+        @if(link.enabled === true) {
+        <li>
+            <a [routerLink]="link.url" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">{{
+                link.name }}</a>
+        </li>
+        }
         }
     </ul>
+
+
+    @if(appService.getComponentConfig('languageSwitcher')?.enabled) {
+    <div class="language-dropdown">
+        <button (click)="appService.toggleDropdown()">
+            {{ appService.getLanguage() }} ▼
+        </button>
+        @if(appService.isLanguageDropdownOpen() === true){
+        <ul class="dropdown-menu">
+            @for(lang of appService.getAvailableLanguages(); track lang.name) {
+            <li (click)="appService.setLanguage(lang.name)">{{ lang.name }}</li>
+            }
+        </ul>
+        }
+    </div>
+    }
+
+
 </nav>

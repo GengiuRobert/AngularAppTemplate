@@ -25,7 +25,7 @@ export class AppConfigService {
         return sidebarConfig.links[this.currentRoute()] || [];
     });
 
-    getAvailableLanguageas = computed(() => {
+    getAvailableLanguages = computed(() => {
         const languageConfig = this.getComponentConfig('languageSwitcher');
         return languageConfig?.enabled ? languageConfig.language.filter((lang: any) => lang.enabled) : [];
     });
