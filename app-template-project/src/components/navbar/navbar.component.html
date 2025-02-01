@@ -5,7 +5,7 @@
         @if(link.enabled === true) {
         <li>
             <a [routerLink]="link.url" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">{{
-                link.name | translate }}</a>
+                translateService.translate(link.name)  }}</a>
         </li>
         }
         }
@@ -15,12 +15,12 @@
     @if(appService.getComponentConfig('languageSwitcher')?.enabled) {
     <div class="language-dropdown">
         <button (click)="appService.toggleDropdown()">
-            {{ appService.getLanguage() | uppercase   }} ▼
+            {{ appService.getLanguage()    }} ▼
         </button>
         @if(appService.isLanguageDropdownOpen() === true){
         <ul class="dropdown-menu">
             @for(lang of appService.getAvailableLanguages(); track lang.name) {
-            <li (click)="appService.setLanguage(lang.name)">{{ lang.name }}</li>
+            <li (click)="setLanguage(lang.name)">{{ lang.name }}</li>
             }
         </ul>
         }

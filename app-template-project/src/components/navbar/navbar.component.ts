@@ -1,42 +1,49 @@
 import { Component, OnInit } from '@angular/core';
-import { AppConfigService } from '../../services/appconfig.service';
-import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { Router, NavigationEnd, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
-import { TranslateModule } from '@ngx-translate/core';
-import { TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { AppConfigService } from '../../services/appconfig.service';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   standalone: true,
   selector: 'app-navbar',
-  imports: [RouterModule,TranslateModule,UpperCasePipe],
+  imports: [RouterModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-
 export class NavbarComponent implements OnInit {
 
-  constructor(public appService: AppConfigService, private router: Router) { }
+  constructor(
+    public appService: AppConfigService,
+    private router: Router,
+    public translateService: TranslationService
+  ) {}
 
   ngOnInit(): void {
-
-    this.appService.getComponentConfig('navbar');
-    this.appService.setCurrentRoute(this.router.url);
-
-    this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe((event: NavigationEnd) => {
-        this.appService.setCurrentRoute(event.urlAfterRedirects);
-      });
-
+    this.appService.initializeRouteTracking(this.router);
   }
 
-  onNavClick(route: string): void {
-    this.router.navigateByUrl(route);
-    this.appService.setCurrentRoute(route);
+  toggleDropdown(): void {
+    this.appService.toggleDropdown();
+  }
+
+  setLanguage(languageCode: string): void {
+    this.appService.changeLanguage(languageCode);
+  }
+
+  get currentLanguage(): string {
+    return this.appService.getLanguage();
+  }
+
+  get availableLanguages() {
+    return this.appService.getAvailableLanguages();
+  }
+
+  get dropdownOpen(): boolean {
+    return this.appService.isLanguageDropdownOpen();
   }
 
   isActive(route: string): boolean {
-    return this.appService.getCurrentRoute() === route;
+    return this.appService.isRouteActive(route);
   }
-
 }
