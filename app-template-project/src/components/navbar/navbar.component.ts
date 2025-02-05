@@ -3,6 +3,7 @@ import { Router, NavigationEnd, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
 import { AppConfigService } from '../../services/appconfig.service';
 import { TranslationService } from '../../services/translation.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   standalone: true,
