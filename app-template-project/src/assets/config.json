@@ -102,15 +102,15 @@
         "enabled": true,
         "language": [
             {
-                "name": "English",
+                "name": "en",
                 "enabled": true
             },
             {
-                "name": "Italian",
+                "name": "it",
                 "enabled": true
             },
             {
-                "name": "Romanian",
+                "name": "ro",
                 "enabled": true
             },
             {

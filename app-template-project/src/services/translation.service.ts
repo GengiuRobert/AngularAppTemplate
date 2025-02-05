@@ -12,7 +12,8 @@ export class TranslationService {
     }
 
     loadTranslations(lang: string): void {
-        const url = `assets/i18n/${lang}.json`;  
+        const url = '/assets/i18n/' + lang + '.json';
+         
         this.http.get<{ [key: string]: string }>(url).subscribe({
             next: (translations) => {
                 this.translations = translations;
