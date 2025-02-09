@@ -6,15 +6,15 @@ import { CommonModule, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [NgFor,NgIf, CommonModule],
+  imports: [NgFor, NgIf, CommonModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent implements OnInit {
 
-  countries: any[] = [];
-  loading = false;
-  error = '';
+  public countries: any[] = [];
+  public loading = false;
+  public error = '';
 
   constructor(public appService: AppConfigService,
     public translateService: TranslationService,
@@ -27,10 +27,12 @@ export class SidebarComponent implements OnInit {
 
   sidebarLinks = computed(() => this.appService.getSidebarLinks());
 
+
   fetchCountries(): void {
+    this.countries = [];
     this.loading = true;
     this.error = '';
-    console.log('Fetching countries...');
+
     this.countryService.getCountries().subscribe({
       next: (data) => {
         console.log('Countries fetched:', data);
@@ -43,5 +45,5 @@ export class SidebarComponent implements OnInit {
         this.loading = false;
       }
     });
-  }
+}
 }
