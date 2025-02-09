@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonModule, NgFor, NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { AuthService } from '../../services/auth.services';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-signup',
@@ -14,7 +15,7 @@ export class SignupComponent {
   password = '';
   message = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService,public translateService: TranslationService) {}
 
   onSignup(): void {
     this.authService.signup(this.email, this.password)

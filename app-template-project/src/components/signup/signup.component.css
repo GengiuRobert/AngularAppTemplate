@@ -1,11 +1,16 @@
 .signup-container {
     width: 300px;
-    margin: auto;
-    padding: 1rem;
+    padding: 2rem;
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #f9f9f9;
-  }
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
   
   label {
     display: block;
@@ -15,10 +20,11 @@
   
   input {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.8rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box;
   }
   
   button {

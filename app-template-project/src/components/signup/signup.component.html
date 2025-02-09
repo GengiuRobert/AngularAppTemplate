@@ -1,13 +1,13 @@
 <div class="signup-container">
-    <h2>Sign Up</h2>
+    <h2>{{ translateService.translate('Sign Up') }}</h2>
     <form (submit)="onSignup()">
-      <label>Email:</label>
+      <label>{{ translateService.translate('Email') }}:</label>
       <input type="email" [(ngModel)]="email" name="email" required />
       
-      <label>Password:</label>
+      <label>{{ translateService.translate('Password') }}:</label>
       <input type="password" [(ngModel)]="password" name="password" required />
   
-      <button type="submit">Sign Up</button>
+      <button type="submit">{{ translateService.translate('Sign Up') }}</button>
     </form>
   
     <p *ngIf="message">{{ message }}</p>
