@@ -1,7 +1,6 @@
 import { Component, computed, OnInit } from '@angular/core';
-
-
 import { AppConfigService } from '../../services/appconfig.service';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,7 +10,9 @@ import { AppConfigService } from '../../services/appconfig.service';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(public appService: AppConfigService) { }
+  constructor(public appService: AppConfigService,
+    public translateService: TranslationService
+  ) { }
 
   ngOnInit(): void {
     this.appService.getComponentConfig('sidebar');

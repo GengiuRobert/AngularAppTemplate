@@ -2,5 +2,14 @@
   "Home": "Home",
   "About Us": "About Us",
   "Services": "Services",
-  "Contact": "Contact"
+  "Contact": "Contact",
+  "Welcome": "Welcome",
+  "Features": "Features",
+  "History": "History",
+  "Our Team": "Our Team",
+  "Web Development": "Web Development",
+  "Mobile Development": "Mobile Development",
+  "Email": "Email",
+  "Phone": "Phone",
+  "Fetch Countries": "Fetch Countries"
 }

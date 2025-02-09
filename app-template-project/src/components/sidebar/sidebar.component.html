@@ -1,16 +1,16 @@
 <aside>
     <ul>
         @for(link of sidebarLinks(); track link.id) {
-            @if(link.enabled === true) {
-                <li>
-                    <a [href]="link.url">{{ link.name }}</a>
-                </li>
-            }
+        @if(link.enabled === true) {
+        <li>
+            <a [href]="link.url">{{ translateService.translate(link.name) }}</a>
+        </li>
+        }
         }
     </ul>
 
     <div id="country-fetcher">
-        <button >Fetch Countries</button>
+        <button>{{ translateService.translate('Fetch Countries') }}</button>
         <!-- <div *ngIf="loading" class="loading">Loading countries...</div> 
          <div *ngIf="error" class="error">{{ error }}</div> -->
 
