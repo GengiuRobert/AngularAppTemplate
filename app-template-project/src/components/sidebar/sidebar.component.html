@@ -11,16 +11,16 @@
 
     <div id="country-fetcher">
         <button (click)="fetchCountries()">{{ translateService.translate('Fetch Countries') }}</button>
-        <!-- <div *ngIf="loading" class="loading">Loading countries...</div> 
-         <div *ngIf="error" class="error">{{ error }}</div> -->
+        <div *ngIf="loading" class="loading">Loading countries...</div>
+        <div *ngIf="error" class="error">{{ error }}</div>
 
-        <!-- <div id="country-list" *ngIf="countries.length > 0">
+        <div id="country-list" *ngIf="countries.length > 0">
             <ul>
                 <li *ngFor="let country of countries">
-                    <strong>{{ country.name.common }}</strong> - {{ country.region }}
+                    <strong>{{ country.name.common }}</strong>
                 </li>
             </ul>
-        </div> -->
+        </div>
     </div>
 
 </aside>
