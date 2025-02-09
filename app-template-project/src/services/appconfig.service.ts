@@ -11,7 +11,8 @@ export class AppConfigService {
   private isDropdownOpen = signal<boolean>(false);
   private selectedLanguage = signal<string>('en');
 
-  constructor(private translationService: TranslationService) {}
+  constructor(private translationService: TranslationService,
+  ) { }
 
   initializeRouteTracking(router: Router): void {
     this.setCurrentRoute(router.url);
@@ -54,7 +55,7 @@ export class AppConfigService {
   getSidebarLinks = computed(() => {
     const sidebarConfig = this.getComponentConfig('sidebar');
     return sidebarConfig.links[this.currentRoute()] || [];
-});
+  });
 
   getComponentConfig(componentName: "navbar" | "footer" | "sidebar" | "languageSwitcher"): any {
     return this.appConfigSignal()?.[componentName];

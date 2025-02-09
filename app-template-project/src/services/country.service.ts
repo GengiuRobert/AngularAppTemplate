@@ -8,7 +8,7 @@ export class CountryService {
 
     private apiUrl = 'https://restcountries.com/v3.1/region/europe';
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) { }
 
     getCountries(): Observable<any> {
         return this.http.get(this.apiUrl).pipe(
@@ -17,5 +17,6 @@ export class CountryService {
                 return throwError(() => new Error('Failed to load countries.'));
             })
         );
+        
     }
 }

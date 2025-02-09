@@ -10,7 +10,7 @@
     </ul>
 
     <div id="country-fetcher">
-        <button>{{ translateService.translate('Fetch Countries') }}</button>
+        <button (click)="fetchCountries()">{{ translateService.translate('Fetch Countries') }}</button>
         <!-- <div *ngIf="loading" class="loading">Loading countries...</div> 
          <div *ngIf="error" class="error">{{ error }}</div> -->
 

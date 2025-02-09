@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd, RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AppConfigService } from '../../services/appconfig.service';
 import { TranslationService } from '../../services/translation.service';
 
@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     public appService: AppConfigService,
     private router: Router,
-    public translateService: TranslationService
+    public translateService: TranslationService,
   ) {}
 
   ngOnInit(): void {
