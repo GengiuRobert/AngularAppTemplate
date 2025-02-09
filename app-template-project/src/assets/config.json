@@ -28,6 +28,13 @@
                 "key": "CONTACT",
                 "url": "/contact",
                 "enabled": true
+            },
+            {
+                "id": 4,
+                "name": "Sign Up",
+                "key": "SIGN_UP",
+                "url": "/signup",
+                "enabled": true
             }
         ],
         "sticky": true,
