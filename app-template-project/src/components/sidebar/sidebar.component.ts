@@ -27,31 +27,16 @@ export class SidebarComponent implements OnInit {
 
   sidebarLinks = computed(() => this.appService.getSidebarLinks());
 
+
   fetchCountries(): void {
     this.countries = [];
     this.loading = true;
     this.error = '';
 
-    const cachedData = localStorage.getItem('countriesData');
-    const cacheTime = localStorage.getItem('countriesCacheTime');
-    const now = new Date().getTime();
-
-    if (cachedData && cacheTime && (now - parseInt(cacheTime, 10)) < 24 * 60 * 60 * 1000) {
-      console.log('Loading countries from cache...');
-      setTimeout(() => {
-        this.countries = JSON.parse(cachedData);
-        this.loading = false;
-      }, 1500);
-      return;
-    }
-
-    console.log('Fetching countries...');
-    this.countryService.getCountries().subscribe({
+    this.countryService.fetchCountries().subscribe({
       next: (data) => {
         console.log('Countries fetched:', data);
         this.countries = data;
-        localStorage.setItem('countriesData', JSON.stringify(data));
-        localStorage.setItem('countriesCacheTime', now.toString());
         this.loading = false;
       },
       error: (err) => {
