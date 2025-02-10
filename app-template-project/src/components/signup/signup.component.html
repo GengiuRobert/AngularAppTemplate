@@ -18,5 +18,6 @@
     <a href="/login" class="login-link">{{ translateService.translate('GoLogin') }}</a>
   </p>
 
-  <p *ngIf="message">{{ message }}</p>
+  <p *ngIf="success" class="message-success">{{ success }}</p>
+  <p *ngIf="message" class="message-text">{{ message }}</p>
 </div>

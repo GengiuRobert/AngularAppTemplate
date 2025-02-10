@@ -24,5 +24,17 @@
   "GoLogin": "Mergi la Autentificare",
   "GoSignup": "Înregistrează-te",
   "SendResetEmail": "Trimite email pentru resetarea parolei",
-  "DontRemember": "Nu îți amintești parola?"
+  "DontRemember": "Nu îți amintești parola?",
+  "InvalidEmail": "Formatul adresei de email este invalid.",
+  "UserDisabled": "Acest cont de utilizator a fost dezactivat.",
+  "UserNotFound": "Nu a fost găsit niciun utilizator cu această adresă de email.",
+  "WrongPassword": "Parolă incorectă.",
+  "TooManyRequests": "Prea multe încercări eșuate de autentificare. Încercați din nou mai târziu.",
+  "UnknownError": "A apărut o eroare necunoscută. Vă rugăm să încercați din nou mai târziu.",
+  "PasswordMismatch": "Parolele nu se potrivesc.",
+  "EnterEmailForReset": "Vă rugăm să introduceți adresa de email pentru a reseta parola.",
+  "MissingPassword": "Lipsește parola. Vă rugăm să introduceți parola.",
+  "SignupSuccessful": "Înregistrare realizată cu succes!",
+  "ResetPasswordSuccess": "Emailul pentru resetarea parolei a fost trimis cu succes!",
+  "LoginSuccess": "Autentificare realizată cu succes!"
 }

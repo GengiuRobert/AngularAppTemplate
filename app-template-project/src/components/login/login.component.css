@@ -1,3 +1,21 @@
+.message-text {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #dc3545;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.message-success {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1ab000;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
 .login-container {
     max-width: 300px;
     padding: 2rem;
@@ -9,6 +27,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 label {
@@ -41,30 +60,15 @@ button:hover {
     background-color: #0056b3;
 }
 
-.signup-prompt {
-    margin-top: 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-.signup-link {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.signup-link:hover {
-    text-decoration: underline;
-}
-
+.signup-prompt,
 .reset-prompt {
     margin-top: 1rem;
-    text-align: center;
     font-size: 0.9rem;
     color: #555;
+    text-align: center;
 }
 
+.signup-link,
 .reset-link {
     color: #007bff;
     text-decoration: none;
@@ -72,23 +76,24 @@ button:hover {
     cursor: pointer;
 }
 
+.signup-link:hover,
 .reset-link:hover {
     text-decoration: underline;
 }
 
 @media (max-width: 768px) {
     .login-container {
-        width: 90%; 
+        width: 90%;
         padding: 1.5rem;
         margin-top: 5rem;
     }
 
-    input, button {
-        padding: 0.6rem; 
+    input,
+    button {
+        padding: 0.6rem;
     }
 
     h2 {
         font-size: 1.5rem;
-        text-align: center;
     }
 }
