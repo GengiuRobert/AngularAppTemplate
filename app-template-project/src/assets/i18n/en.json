@@ -16,5 +16,7 @@
   "Password": "Password",
   "Error404Message": "Oops! The page you're looking for doesn't exist...",
   "GoBackHome": "Go Back to Home",
-  "Footer": "Designed by Gengiu Robert-Constantin"
+  "Footer": "Designed by Gengiu Robert-Constantin",
+  "HaveAccount": "Already have an account?",
+  "GoLogin": "Go to Login"
 }

@@ -9,6 +9,11 @@
   
       <button type="submit">{{ translateService.translate('Sign Up') }}</button>
     </form>
+
+    <p class="login-prompt">
+      {{ translateService.translate('HaveAccount') }}
+      <a href="/login" class="login-link">{{ translateService.translate('GoLogin') }}</a>
+    </p>
   
     <p *ngIf="message">{{ message }}</p>
   </div>

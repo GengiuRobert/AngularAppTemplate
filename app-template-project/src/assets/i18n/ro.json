@@ -16,5 +16,7 @@
   "Password": "Parolă",
   "Error404Message": "Oops! Pagina pe care o cauți nu există...",
   "GoBackHome": "Întoarce-te la Acasă",
-  "Footer": "Realizat de Gengiu Robert-Constantin"
+  "Footer": "Realizat de Gengiu Robert-Constantin",
+  "HaveAccount": "Deja ai un cont?",
+  "GoLogin": "Mergi la Autentificare"
 }

@@ -41,6 +41,23 @@
     background-color: #0056b3;
   }
   
+  .login-prompt {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.login-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
   @media (max-width: 768px) {
     .signup-container {
         width: 90%; 

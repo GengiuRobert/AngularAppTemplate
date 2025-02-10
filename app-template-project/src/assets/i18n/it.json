@@ -16,5 +16,7 @@
     "Password": "Password",
     "Error404Message": "Oops! La pagina che stai cercando non esiste...",
     "GoBackHome": "Torna alla Home",
-    "Footer": "Realizzato  da Gengiu Robert-Constantin"
+    "Footer": "Realizzato  da Gengiu Robert-Constantin",
+    "HaveAccount": "Hai già un account?",
+    "GoLogin": "Vai al Login"
 }
