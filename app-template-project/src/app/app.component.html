@@ -1,7 +1,10 @@
 <div id="app-container">
     <app-navbar ngSkipHydration></app-navbar>
     <div id="content">
-        <app-sidebar *ngIf="!isSignUpPage" ngSkipHydration></app-sidebar>
+        @if( noSideBarPage === false){
+        <app-sidebar ngSkipHydration></app-sidebar>
+        }
+        <!-- <app-sidebar *ngIf="!noSideBarPage" ngSkipHydration></app-sidebar> -->
         <router-outlet></router-outlet>
     </div>
     <app-footer ngSkipHydration></app-footer>

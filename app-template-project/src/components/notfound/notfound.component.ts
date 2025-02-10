@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-notfound',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './notfound.component.css'
 })
 export class NotfoundComponent {
-
+  constructor(public translateService: TranslationService) { }
 }

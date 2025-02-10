@@ -1,45 +1,50 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    margin: 0;
-    padding: 0;
+.fullscreen-container {
+    font-family: 'Verdana', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
     height: 100vh;
-    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .notfound-container {
     background-color: #fff;
-    padding: 3rem;
+    padding: 3rem 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     max-width: 600px;
-    width: 100%;
+    width: 90%;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .notfound-container h1 {
     font-size: 5rem;
     color: #ff4d4d;
-    margin: 0;
+    margin: 0 0 1rem;
+    font-weight: bold;
 }
 
 .notfound-container p {
+    font-weight: 700;
     font-size: 1.25rem;
-    margin: 1rem 0;
+    margin: 0 0 2rem;
+    color: #555;
 }
 
 .back-home {
     display: inline-block;
-    margin-top: 2rem;
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
     background-color: #007bff;
-    border: none;
     border-radius: 8px;
     text-decoration: none;
     transition: background-color 0.3s ease;
@@ -47,4 +52,37 @@ body {
 
 .back-home:hover {
     background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .notfound-container {
+        width: 90%; 
+        padding: 1.5rem;
+        margin-top: 10rem;
+    }
+
+    .notfound-container h1 {
+        font-size: 3.5rem;
+    }
+
+    .notfound-container p {
+        font-size: 1rem;
+    }
+
+    .back-home {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+    }
 }

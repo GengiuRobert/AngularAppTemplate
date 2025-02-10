@@ -9,21 +9,22 @@ import { SidebarComponent } from "../components/sidebar/sidebar.component";
 
 @Component({
   selector: 'app-root',
-  imports: [NavbarComponent, FooterComponent, SidebarComponent,RouterOutlet,CommonModule,NgIf],
+  imports: [NavbarComponent, FooterComponent, SidebarComponent, RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
   title = 'app-template-project';
 
-  public isSignUpPage = false;
+  public noSideBarPage = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.isSignUpPage = event.url === '/signup';
+        const routesWithoutSidebar = ['/404', '/signup'];
+        this.noSideBarPage = routesWithoutSidebar.some(route => event.urlAfterRedirects === route);
       }
     });
   }

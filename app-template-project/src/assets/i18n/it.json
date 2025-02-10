@@ -13,5 +13,7 @@
     "Email": "Email",
     "Phone": "Telefono",
     "Fetch Countries": "Ottieni Paesi",
-    "Password": "Password"
+    "Password": "Password",
+    "Error404Message": "Oops! La pagina che stai cercando non esiste...",
+    "GoBackHome": "Torna alla Home"
 }
