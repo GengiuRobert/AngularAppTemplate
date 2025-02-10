@@ -4,6 +4,7 @@
     "Services": "Servizi",
     "Contact": "Contatto",
     "Sign Up": "Registrati",
+    "Log In": "Accedi",
     "Welcome": "Benvenuto",
     "Features": "Caratteristiche",
     "History": "Storia",
@@ -18,5 +19,7 @@
     "GoBackHome": "Torna alla Home",
     "Footer": "Realizzato  da Gengiu Robert-Constantin",
     "HaveAccount": "Hai già un account?",
-    "GoLogin": "Vai al Login"
+    "GoLogin": "Vai al Login",
+    "NoAccount": "Non hai un account?",
+    "GoSignup":"Registrati" 
 }

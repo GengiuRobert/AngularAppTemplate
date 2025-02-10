@@ -12,7 +12,11 @@ export class AppConfigService {
   private selectedLanguage = signal<string>('en');
 
   constructor(private translationService: TranslationService,
-  ) { }
+  ) {
+    const savedLanguage = localStorage.getItem('appLanguage') || 'en';
+    this.selectedLanguage.set(savedLanguage);
+    this.translationService.setLanguage(savedLanguage);
+  }
 
   initializeRouteTracking(router: Router): void {
     this.setCurrentRoute(router.url);
@@ -39,6 +43,7 @@ export class AppConfigService {
 
   changeLanguage(languageCode: string): void {
     this.selectedLanguage.set(languageCode);
+    localStorage.setItem('appLanguage', languageCode);
     this.translationService.setLanguage(languageCode);
     this.isDropdownOpen.set(false);
   }

@@ -3,6 +3,7 @@
   "About Us": "About Us",
   "Services": "Services",
   "Contact": "Contact",
+  "Log In": "Log In",
   "Sign Up": "Sign Up",
   "Welcome": "Welcome",
   "Features": "Features",
@@ -18,5 +19,7 @@
   "GoBackHome": "Go Back to Home",
   "Footer": "Designed by Gengiu Robert-Constantin",
   "HaveAccount": "Already have an account?",
-  "GoLogin": "Go to Login"
+  "NoAccount": "Don't have an account?",
+  "GoLogin": "Go to Login",
+  "GoSignup": "Go to SignUp"
 }

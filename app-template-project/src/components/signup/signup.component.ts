@@ -3,19 +3,20 @@ import { CommonModule, NgIf } from '@angular/common';
 import { AuthService } from '../../services/auth.services';
 import { FormsModule } from '@angular/forms';
 import { TranslationService } from '../../services/translation.service';
+import { AppConfigService } from '../../services/appconfig.service';
 
 @Component({
   selector: 'app-signup',
-  imports: [NgIf, CommonModule,FormsModule],
+  imports: [NgIf, CommonModule, FormsModule],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-  email = '';
-  password = '';
-  message = '';
+  public email = '';
+  public password = '';
+  public message = '';
 
-  constructor(private authService: AuthService,public translateService: TranslationService) {}
+  constructor(private authService: AuthService, public translateService: TranslationService, private appService: AppConfigService) { }
 
   onSignup(): void {
     this.authService.signup(this.email, this.password)
@@ -25,5 +26,9 @@ export class SignupComponent {
       .catch(error => {
         this.message = `Error: ${error.message}`;
       });
+  }
+
+  setLanguage(languageCode: string): void {
+    this.appService.changeLanguage(languageCode);
   }
 }

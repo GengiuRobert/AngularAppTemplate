@@ -8,7 +8,8 @@ export class TranslationService {
     private currentLang = 'en';
 
     constructor(private http: HttpClient) {
-        this.loadTranslations(this.currentLang);
+        const savedLanguage = localStorage.getItem('appLanguage') || 'en';
+        this.loadTranslations(savedLanguage);
     }
 
     loadTranslations(lang: string): void {

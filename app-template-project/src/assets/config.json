@@ -30,7 +30,14 @@
                 "enabled": true
             },
             {
-                "id": 4,
+                "id": 5,
+                "name": "Log In",
+                "key": "LOG_IN",
+                "url": "/login",
+                "enabled": true
+            },
+            {
+                "id": 6,
                 "name": "Sign Up",
                 "key": "SIGN_UP",
                 "url": "/signup",

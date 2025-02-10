@@ -3,6 +3,7 @@
   "About Us": "Despre Noi",
   "Services": "Servicii",
   "Contact": "Contact",
+  "Log In": "Autentifică-te",
   "Sign Up": "Înregistrează-te",
   "Welcome": "Bine ai venit",
   "Features": "Caracteristici",
@@ -18,5 +19,7 @@
   "GoBackHome": "Întoarce-te la Acasă",
   "Footer": "Realizat de Gengiu Robert-Constantin",
   "HaveAccount": "Deja ai un cont?",
-  "GoLogin": "Mergi la Autentificare"
+  "NoAccount": "Nu ai un cont?",
+  "GoLogin": "Mergi la Autentificare",
+  "GoSignup": "Înregistrează-te"
 }
