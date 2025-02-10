@@ -14,11 +14,18 @@ import { AppConfigService } from '../../services/appconfig.service';
 export class SignupComponent {
   public email = '';
   public password = '';
+  public confirmPassword = '';
   public message = '';
 
   constructor(private authService: AuthService, public translateService: TranslationService, private appService: AppConfigService) { }
 
   onSignup(): void {
+
+    if (this.password !== this.confirmPassword) {
+      this.message = 'Passwords do not match.';
+      return;
+    }
+
     this.authService.signup(this.email, this.password)
       .then(() => {
         this.message = 'Signup successful!';

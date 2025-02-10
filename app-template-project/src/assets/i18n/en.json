@@ -15,11 +15,14 @@
   "Phone": "Phone",
   "Fetch Countries": "Fetch Countries",
   "Password": "Password",
+  "Confirm Password": "Confirm Password",
   "Error404Message": "Oops! The page you're looking for doesn't exist...",
   "GoBackHome": "Go Back to Home",
   "Footer": "Designed by Gengiu Robert-Constantin",
   "HaveAccount": "Already have an account?",
   "NoAccount": "Don't have an account?",
   "GoLogin": "Go to Login",
-  "GoSignup": "Go to SignUp"
+  "GoSignup": "Go to SignUp",
+  "SendResetEmail": "Send Reset Password Email",
+  "DontRemember": "Don't remember your password?"
 }

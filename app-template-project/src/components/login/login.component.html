@@ -14,6 +14,11 @@
       {{ translateService.translate('NoAccount') }}
       <a href="/signup" class="signup-link">{{ translateService.translate('GoSignup') }}</a>
     </p>
+
+    <p class="reset-prompt">
+      {{ translateService.translate('DontRemember') }}
+      <a (click)="onResetPassword()" class="reset-link">{{ translateService.translate('SendResetEmail') }}</a>
+    </p>
   
     <p *ngIf="message">{{ message }}</p>
 </div>

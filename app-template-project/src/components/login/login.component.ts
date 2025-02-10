@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 
 import { TranslationService } from '../../services/translation.service';
+import { AuthService } from '../../services/auth.services';
 
 @Component({
   selector: 'app-login',
-  imports: [NgIf, CommonModule,FormsModule],
+  imports: [NgIf, CommonModule, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -17,10 +18,31 @@ export class LoginComponent {
   public password = '';
   public message = '';
 
-  constructor(public translateService: TranslationService) { }
+  constructor(public translateService: TranslationService, private authService: AuthService) { }
 
   onLogin(): void {
-    console.log("needs implementation");
+    this.authService.login(this.email, this.password)
+      .then(() => {
+        this.message = 'Login successful!';
+      })
+      .catch(error => {
+        this.message = `Error: ${error.message}`;
+      });
+  }
+
+  onResetPassword(): void {
+    if (!this.email) {
+      this.message = 'Please enter your email address to reset your password.';
+      return;
+    }
+
+    this.authService.resetPassword(this.email)
+      .then(() => {
+        this.message = 'Password reset email sent successfully!';
+      })
+      .catch(error => {
+        this.message = `Error: ${error.message}`;
+      });
   }
 
 } 

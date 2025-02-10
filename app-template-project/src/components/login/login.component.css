@@ -58,6 +58,24 @@ button:hover {
     text-decoration: underline;
 }
 
+.reset-prompt {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.reset-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.reset-link:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .login-container {
         width: 90%; 

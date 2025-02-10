@@ -15,11 +15,14 @@
   "Phone": "Telefon",
   "Fetch Countries": "Obține Țări",
   "Password": "Parolă",
+  "Confirm Password": "Confirmă Parola",
   "Error404Message": "Oops! Pagina pe care o cauți nu există...",
   "GoBackHome": "Întoarce-te la Acasă",
   "Footer": "Realizat de Gengiu Robert-Constantin",
   "HaveAccount": "Deja ai un cont?",
   "NoAccount": "Nu ai un cont?",
   "GoLogin": "Mergi la Autentificare",
-  "GoSignup": "Înregistrează-te"
+  "GoSignup": "Înregistrează-te",
+  "SendResetEmail": "Trimite email pentru resetarea parolei",
+  "DontRemember": "Nu îți amintești parola?"
 }
