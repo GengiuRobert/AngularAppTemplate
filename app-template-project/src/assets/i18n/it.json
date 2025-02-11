@@ -39,5 +39,6 @@
     "LoginSuccess": "Accesso effettuato con successo!",
     "AuthRequiredTitle": "Autenticazione richiesta",
     "AuthRequiredMessage": "Accedi per continuare.",
-    "GoToLogin": "Vai al Login"
+    "GoToLogin": "Vai al Login",
+    "Log Out": "Disconnetti"
 }

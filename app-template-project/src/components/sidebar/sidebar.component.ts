@@ -3,6 +3,7 @@ import { AppConfigService } from '../../services/appconfig.service';
 import { TranslationService } from '../../services/translation.service';
 import { CountryService } from '../../services/country.service';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
+import { AuthService } from '../../services/auth.services';
 
 @Component({
   selector: 'app-sidebar',
@@ -15,10 +16,13 @@ export class SidebarComponent implements OnInit {
   public countries: any[] = [];
   public loading = false;
   public error = '';
+  public successMessage = '';
+  public errorMessage = '';
 
   constructor(public appService: AppConfigService,
     public translateService: TranslationService,
-    private countryService: CountryService
+    private countryService: CountryService,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +31,18 @@ export class SidebarComponent implements OnInit {
 
   sidebarLinks = computed(() => this.appService.getSidebarLinks());
 
+  onLogOut(): void {
+    this.successMessage = '';
+    this.errorMessage = '';
+
+    this.authService.logout()
+      .then(() => {
+        console.log("success");
+      })
+      .catch(error => {
+        console.error('Logout error:', error);
+      });
+  }
 
   fetchCountries(): void {
     this.countries = [];

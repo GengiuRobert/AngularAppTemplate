@@ -39,5 +39,6 @@
   "LoginSuccess": "Login successful!",
   "AuthRequiredTitle": "Authentication Required",
   "AuthRequiredMessage": "Please log in to continue.",
-  "GoToLogin": "Go to Login"
+  "GoToLogin": "Go to Login",
+  "Log Out": "Log Out"
 }

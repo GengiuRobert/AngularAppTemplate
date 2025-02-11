@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, User, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, User, onAuthStateChanged, signOut } from 'firebase/auth';
 import { firebaseConfig } from '../app/firebase.config';
 import { TranslationService } from './translation.service';
 
@@ -33,6 +33,18 @@ export class AuthService {
 
   login(email: string, password: string): Promise<any> {
     return signInWithEmailAndPassword(this.auth, email, password);
+  }
+
+  logout(): Promise<void> {
+    return signOut(this.auth)
+      .then(() => {
+        this.currentUser = null;
+        console.log('User successfully logged out');
+      })
+      .catch((error) => {
+        console.error('Error during logout:', error);
+        throw error;
+      });
   }
 
   resetPassword(email: string): Promise<any> {

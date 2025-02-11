@@ -39,5 +39,6 @@
   "LoginSuccess": "Autentificare realizată cu succes!",
   "AuthRequiredTitle": "Autentificare necesară",
   "AuthRequiredMessage": "Te rog autentifică-te pentru a continua.",
-  "GoToLogin": "Mergi la Login"
+  "GoToLogin": "Mergi la Login",
+  "Log Out": "Deconectare"
 }
