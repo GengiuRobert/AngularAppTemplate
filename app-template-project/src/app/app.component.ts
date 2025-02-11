@@ -23,8 +23,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        const routesWithoutSidebar = ['/404', '/signup','/login'];
-        this.noSideBarPage = routesWithoutSidebar.some(route => event.urlAfterRedirects === route);
+        const routesWithoutSidebar = ['/404', '/signup','/login','/auth-required'];
+        this.noSideBarPage = routesWithoutSidebar.some(route => event.urlAfterRedirects.startsWith(route));
       }
     });
   }

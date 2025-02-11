@@ -31,11 +31,13 @@
   "WrongPassword": "Incorrect password.",
   "TooManyRequests": "Too many failed login attempts. Try again later.",
   "UnknownError": "An unknown error occurred. Please try again later.",
-  "PasswordMismatch":"Passwords do not match.",
-  "EnterEmailForReset":"Please enter your email address to reset your password.",
+  "PasswordMismatch": "Passwords do not match.",
+  "EnterEmailForReset": "Please enter your email address to reset your password.",
   "MissingPassword": "Password is missing. Please enter your password.",
   "SignupSuccessful": "Signup successful!",
   "ResetPasswordSuccess": "Password reset email sent successfully!",
-  "LoginSuccess": "Login successful!"
-
+  "LoginSuccess": "Login successful!",
+  "AuthRequiredTitle": "Authentication Required",
+  "AuthRequiredMessage": "Please log in to continue.",
+  "GoToLogin": "Go to Login"
 }

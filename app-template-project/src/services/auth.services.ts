@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, User, onAuthStateChanged } from 'firebase/auth';
 import { firebaseConfig } from '../app/firebase.config';
 import { TranslationService } from './translation.service';
 
@@ -10,9 +10,22 @@ import { TranslationService } from './translation.service';
 
 export class AuthService {
 
-  constructor(private translateService: TranslationService) { }
+  constructor(private translateService: TranslationService) {
+    this.monitorAuthState();
+  }
 
   private auth = getAuth(initializeApp(firebaseConfig));
+  private currentUser: User | null = null;
+
+  monitorAuthState(): void {
+    onAuthStateChanged(this.auth, (user) => {
+      this.currentUser = user;
+    });
+  }
+
+  isAuthenticated(): boolean {
+    return this.currentUser !== null;
+  }
 
   signup(email: string, password: string): Promise<any> {
     return createUserWithEmailAndPassword(this.auth, email, password);

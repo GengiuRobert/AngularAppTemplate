@@ -1,0 +1,7 @@
+<div class="fullscreen-container">
+    <div class="auth-required-container">
+        <h1>{{ translateService.translate('AuthRequiredTitle') }}</h1>
+        <p>{{ translateService.translate('AuthRequiredMessage') }}</p>
+        <button (click)="redirectToLogin()">{{ translateService.translate('GoToLogin') }}</button>
+    </div>
+</div>

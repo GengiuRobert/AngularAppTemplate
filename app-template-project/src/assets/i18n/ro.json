@@ -36,5 +36,8 @@
   "MissingPassword": "Lipsește parola. Vă rugăm să introduceți parola.",
   "SignupSuccessful": "Înregistrare realizată cu succes!",
   "ResetPasswordSuccess": "Emailul pentru resetarea parolei a fost trimis cu succes!",
-  "LoginSuccess": "Autentificare realizată cu succes!"
+  "LoginSuccess": "Autentificare realizată cu succes!",
+  "AuthRequiredTitle": "Autentificare necesară",
+  "AuthRequiredMessage": "Te rog autentifică-te pentru a continua.",
+  "GoToLogin": "Mergi la Login"
 }
