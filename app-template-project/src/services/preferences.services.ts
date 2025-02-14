@@ -37,7 +37,7 @@ export class UserPreferencesService {
       if (docSnap.exists()) {
         return docSnap.data();
       } else {
-        return this.defaultPreferences; // Returnează preferințele default fără a le salva
+        return this.defaultPreferences; 
       }
     } else {
       throw new Error('User not logged in');

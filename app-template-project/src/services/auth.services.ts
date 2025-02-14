@@ -73,10 +73,9 @@ export class AuthService {
         }
   
         try {
-          // Obține preferințele utilizatorului din Firebase
           const preferences = await this.userPreferencesService.getPreferences();
           if (preferences.language) {
-            this.translateService.setLanguage(preferences.language); // Setează limbajul
+            this.translateService.setLanguage(preferences.language); 
             console.log('Preferences loaded and language set to:', preferences.language);
           }
         } catch (error) {
