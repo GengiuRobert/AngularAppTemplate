@@ -26,6 +26,7 @@ export class NavbarComponent implements OnInit {
     this.appService.initializeRouteTracking(this.router);
     this.authService.authState$.subscribe((authState) => {
       this.isAuthenticated = authState;
+      console.log('Auth state updated: ', authState);
     });
   }
 

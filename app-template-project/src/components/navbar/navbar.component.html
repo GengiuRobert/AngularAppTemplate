@@ -3,10 +3,21 @@
     <ul>
         @for(link of appService.getComponentConfig('navbar')?.links; track link.id) {
         @if(link.enabled && !(isAuthenticated && (link.key === 'LOG_IN' || link.key === 'SIGN_UP'))) {
+        @if(link.key === 'PREFERENCES') {
+        @if(isAuthenticated) {
         <li>
-            <a [routerLink]="link.url" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">{{
-                translateService.translate(link.name) }}</a>
+            <a [routerLink]="link.url" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+                {{ translateService.translate(link.name) }}
+            </a>
         </li>
+        }
+        } @else {
+        <li>
+            <a [routerLink]="link.url" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+                {{ translateService.translate(link.name) }}
+            </a>
+        </li>
+        }
         }
         }
     </ul>

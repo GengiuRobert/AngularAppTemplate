@@ -8,6 +8,7 @@ import { NotfoundComponent } from '../components/notfound/notfound.component';
 import { LoginComponent } from '../components/login/login.component';
 import { AuthGuard } from '../components/authguard/auth.guard';
 import { AuthguardComponent } from '../components/authguard/authguard.component';
+import { PreferencesComponent } from '../components/preferences/preferences.component';
 
 export const routes: Routes = [
 
@@ -17,6 +18,7 @@ export const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'preferences', component: PreferencesComponent },
     { path: 'auth-required', component: AuthguardComponent },
     { path: '404', component: NotfoundComponent },
     { path: '**', redirectTo: '/404' }
