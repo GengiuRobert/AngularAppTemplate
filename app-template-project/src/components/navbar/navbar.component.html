@@ -2,10 +2,10 @@
     [class.transparent]="appService.getComponentConfig('navbar')?.transparent">
     <ul>
         @for(link of appService.getComponentConfig('navbar')?.links; track link.id) {
-        @if(link.enabled === true) {
+        @if(link.enabled && !(isAuthenticated && (link.key === 'LOG_IN' || link.key === 'SIGN_UP'))) {
         <li>
             <a [routerLink]="link.url" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">{{
-                translateService.translate(link.name)  }}</a>
+                translateService.translate(link.name) }}</a>
         </li>
         }
         }
@@ -15,7 +15,7 @@
     @if(appService.getComponentConfig('languageSwitcher')?.enabled) {
     <div class="language-dropdown">
         <button (click)="appService.toggleDropdown()">
-            {{ appService.getLanguage()    }} ▼
+            {{ appService.getLanguage() }} ▼
         </button>
         @if(appService.isLanguageDropdownOpen() === true){
         <ul class="dropdown-menu">

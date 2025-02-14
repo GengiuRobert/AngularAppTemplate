@@ -10,7 +10,7 @@
     </ul>
 
     <div id="country-fetcher">
-        <button (click)="onLogOut()">{{ translateService.translate('Log Out') }}</button>
+        <button *ngIf="isAuthenticated" (click)="onLogOut()">{{ translateService.translate('Log Out') }}</button>
         <button (click)="fetchCountries()">{{ translateService.translate('Fetch Countries') }}</button>
         <div *ngIf="loading" class="spinner-container">
             <div class="spinner"></div>

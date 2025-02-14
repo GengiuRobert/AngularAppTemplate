@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { AppConfigService } from '../../services/appconfig.service';
 import { TranslationService } from '../../services/translation.service';
+import { AuthService } from '../../services/auth.services';
 
 @Component({
   standalone: true,
@@ -12,14 +13,20 @@ import { TranslationService } from '../../services/translation.service';
 })
 export class NavbarComponent implements OnInit {
 
+  public isAuthenticated = false;
+
   constructor(
     public appService: AppConfigService,
     private router: Router,
     public translateService: TranslationService,
-  ) {}
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
     this.appService.initializeRouteTracking(this.router);
+    this.authService.authState$.subscribe((authState) => {
+      this.isAuthenticated = authState;
+    });
   }
 
   toggleDropdown(): void {

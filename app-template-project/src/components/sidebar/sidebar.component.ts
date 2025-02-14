@@ -19,6 +19,7 @@ export class SidebarComponent implements OnInit {
   public error = '';
   public successMessage = '';
   public errorMessage = '';
+  public isAuthenticated = false;
 
   constructor(public appService: AppConfigService,
     public translateService: TranslationService,
@@ -29,22 +30,12 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.appService.getComponentConfig('sidebar');
+    this.authService.authState$.subscribe((authState) => {
+      this.isAuthenticated = authState;
+    });
   }
 
   sidebarLinks = computed(() => this.appService.getSidebarLinks());
-
-  // onLogOut(): void {
-  //   this.successMessage = '';
-  //   this.errorMessage = '';
-
-  //   this.authService.logout()
-  //     .then(() => {
-  //       console.log("success");
-  //     })
-  //     .catch(error => {
-  //       console.error('Logout error:', error);
-  //     });
-  // }
 
   onLogOut(): void {
     this.successMessage = '';
