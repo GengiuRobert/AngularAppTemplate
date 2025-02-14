@@ -1,0 +1,147 @@
+{
+    "navbar": {
+        "links": [
+            {
+                "id": 1,
+                "name": "Home",
+                "key": "HOME",
+                "url": "/",
+                "enabled": true
+            },
+            {
+                "id": 2,
+                "name": "About Us",
+                "key": "ABOUT_US",
+                "url": "/about",
+                "enabled": true
+            },
+            {
+                "id": 3,
+                "name": "Services",
+                "key": "SERVICES",
+                "url": "/services",
+                "enabled": true
+            },
+            {
+                "id": 4,
+                "name": "Contact",
+                "key": "CONTACT",
+                "url": "/contact",
+                "enabled": true
+            },
+            {
+                "id": 5,
+                "name": "Log In",
+                "key": "LOG_IN",
+                "url": "/login",
+                "enabled": true
+            },
+            {
+                "id": 6,
+                "name": "Sign Up",
+                "key": "SIGN_UP",
+                "url": "/signup",
+                "enabled": true
+            },
+            {
+                "id": 7,
+                "name": "Preferences",
+                "key": "PREFERENCES",
+                "url": "/preferences",
+                "enabled": true
+            }
+        ],
+        "sticky": true,
+        "transparent": false
+    },
+    "footer": {
+        "sticky": false,
+        "transparent": false
+    },
+    "sidebar": {
+        "enabled": true,
+        "links": {
+            "/": [
+                {
+                    "id": 1,
+                    "name": "Welcome",
+                    "url": "/welcome",
+                    "enabled": true
+                },
+                {
+                    "id": 2,
+                    "name": "Features",
+                    "url": "/features",
+                    "enabled": true
+                }
+            ],
+            "/about": [
+                {
+                    "id": 1,
+                    "name": "History",
+                    "url": "/history",
+                    "enabled": true
+                },
+                {
+                    "id": 2,
+                    "name": "Our Team",
+                    "url": "/team",
+                    "enabled": true
+                }
+            ],
+            "/services": [
+                {
+                    "id": 1,
+                    "name": "Web Development",
+                    "url": "/web",
+                    "enabled": true
+                },
+                {
+                    "id": 2,
+                    "name": "Mobile Development",
+                    "url": "/mobile",
+                    "enabled": true
+                }
+            ],
+            "/contact": [
+                {
+                    "id": 1,
+                    "name": "Email",
+                    "url": "/email",
+                    "enabled": true
+                },
+                {
+                    "id": 2,
+                    "name": "Phone",
+                    "url": "/phone",
+                    "enabled": true
+                }
+            ]
+        }
+    },
+    "languageSwitcher": {
+        "enabled": true,
+        "language": [
+            {
+                "name": "en",
+                "enabled": true
+            },
+            {
+                "name": "it",
+                "enabled": true
+            },
+            {
+                "name": "ro",
+                "enabled": true
+            },
+            {
+                "name": "Spanish",
+                "enabled": false
+            },
+            {
+                "name": "German",
+                "enabled": false
+            }
+        ]
+    }
+}
