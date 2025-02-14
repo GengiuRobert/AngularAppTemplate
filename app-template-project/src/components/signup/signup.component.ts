@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CommonModule,NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { AuthService } from '../../services/auth.services';
 import { FormsModule } from '@angular/forms';
 import { TranslationService } from '../../services/translation.service';
@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
-  imports: [CommonModule, FormsModule,NgIf],
+  imports: [CommonModule, FormsModule, NgIf],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
@@ -42,12 +42,12 @@ export class SignupComponent implements OnInit, OnDestroy {
 
   onSignup(): void {
 
-    this.message = '';  
+    this.message = '';
     this.success = '';
 
     if (this.password !== this.confirmPassword) {
       this.currentErrorCode = 'missmatch';
-      this.message = this.authService.handleFirebaseError(this.currentErrorCode); 
+      this.message = this.authService.handleFirebaseError(this.currentErrorCode);
       return;
     }
 
@@ -55,10 +55,15 @@ export class SignupComponent implements OnInit, OnDestroy {
       .then(() => {
         this.currentErrorCode = 'oksignup';
         this.success = this.authService.handleFirebaseError(this.currentErrorCode)
+        this.email = '';
+        this.password = '';
+        this.confirmPassword = '';
       })
       .catch(error => {
         this.currentErrorCode = error.message;
         this.message = this.authService.handleFirebaseError(this.currentErrorCode);
+        this.password = '';
+        this.confirmPassword = '';
       });
   }
 

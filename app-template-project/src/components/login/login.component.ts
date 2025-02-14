@@ -57,10 +57,13 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.currentErrorCode = 'oklogin';
         this.success = this.authService.handleFirebaseError(this.currentErrorCode);
         this.router.navigate([this.returnUrl]);
+        this.email = '';
+        this.password = '';
       })
       .catch(error => {
         this.currentErrorCode = error.message;
         this.message = this.authService.handleFirebaseError(this.currentErrorCode);
+        this.password = '';
       });
   }
 
