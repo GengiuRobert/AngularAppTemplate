@@ -40,5 +40,6 @@
   "AuthRequiredTitle": "Autentificare necesară",
   "AuthRequiredMessage": "Te rog autentifică-te pentru a continua.",
   "GoToLogin": "Mergi la Login",
-  "Log Out": "Deconectare"
+  "Log Out": "Deconectare",
+  "EmailNotVerified" : "Email neconfirmat"
 }

@@ -1,6 +1,15 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, User, onAuthStateChanged, signOut } from 'firebase/auth';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+  User,
+  onAuthStateChanged,
+  signOut,
+  sendEmailVerification,
+} from 'firebase/auth';
 import { firebaseConfig } from '../app/firebase.config';
 import { TranslationService } from './translation.service';
 
@@ -28,11 +37,25 @@ export class AuthService {
   }
 
   signup(email: string, password: string): Promise<any> {
-    return createUserWithEmailAndPassword(this.auth, email, password);
+    return createUserWithEmailAndPassword(this.auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        return sendEmailVerification(user);
+      });
   }
 
   login(email: string, password: string): Promise<any> {
-    return signInWithEmailAndPassword(this.auth, email, password);
+    return signInWithEmailAndPassword(this.auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        if (!user.emailVerified) {
+          throw new Error("email-not-verified");
+        }
+        return user;
+      })
+      .catch((error) => {
+        throw error;
+      });
   }
 
   logout(): Promise<void> {
@@ -88,6 +111,9 @@ export class AuthService {
         break;
       case 'okreset':
         translatedMessage = this.translateService.translate('ResetPasswordSuccess');
+        break;
+      case 'email-not-verified':
+        translatedMessage = this.translateService.translate('EmailNotVerified');
         break;
       default:
         translatedMessage = this.translateService.translate('UnknownError');

@@ -40,5 +40,6 @@
   "AuthRequiredTitle": "Authentication Required",
   "AuthRequiredMessage": "Please log in to continue.",
   "GoToLogin": "Go to Login",
-  "Log Out": "Log Out"
+  "Log Out": "Log Out",
+  "EmailNotVerified" : "Email not verified"
 }

@@ -40,5 +40,6 @@
     "AuthRequiredTitle": "Autenticazione richiesta",
     "AuthRequiredMessage": "Accedi per continuare.",
     "GoToLogin": "Vai al Login",
-    "Log Out": "Disconnetti"
+    "Log Out": "Disconnetti",
+    "EmailNotVerified" : "Email non verificata"
 }
