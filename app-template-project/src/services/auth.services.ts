@@ -40,7 +40,9 @@ export class AuthService {
     return createUserWithEmailAndPassword(this.auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        return sendEmailVerification(user);
+        return sendEmailVerification(user).then(() => {
+          return signOut(this.auth);
+        });
       });
   }
 
@@ -49,7 +51,8 @@ export class AuthService {
       .then((userCredential) => {
         const user = userCredential.user;
         if (!user.emailVerified) {
-          throw new Error("email-not-verified");
+          signOut(this.auth);
+          throw new Error('email-not-verified'); 
         }
         return user;
       })
