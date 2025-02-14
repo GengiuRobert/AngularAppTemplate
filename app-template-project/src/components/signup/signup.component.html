@@ -1,0 +1,23 @@
+<div class="signup-container">
+  <h2>{{ translateService.translate('Sign Up') }}</h2>
+  <form (submit)="onSignup()">
+    <label>{{ translateService.translate('Email') }}:</label>
+    <input type="email" [(ngModel)]="email" name="email" required />
+
+    <label>{{ translateService.translate('Password') }}:</label>
+    <input type="password" [(ngModel)]="password" name="password" required />
+
+    <label>{{ translateService.translate('Confirm Password') }}:</label>
+    <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required />
+
+    <button type="submit">{{ translateService.translate('Sign Up') }}</button>
+  </form>
+
+  <p class="login-prompt">
+    {{ translateService.translate('HaveAccount') }}
+    <a href="/login" class="login-link">{{ translateService.translate('GoLogin') }}</a>
+  </p>
+
+  <p *ngIf="success" class="message-success">{{ success }}</p>
+  <p *ngIf="message" class="message-text">{{ message }}</p>
+</div>

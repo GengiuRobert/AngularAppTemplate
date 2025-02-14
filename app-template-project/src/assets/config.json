@@ -28,6 +28,27 @@
                 "key": "CONTACT",
                 "url": "/contact",
                 "enabled": true
+            },
+            {
+                "id": 5,
+                "name": "Log In",
+                "key": "LOG_IN",
+                "url": "/login",
+                "enabled": true
+            },
+            {
+                "id": 6,
+                "name": "Sign Up",
+                "key": "SIGN_UP",
+                "url": "/signup",
+                "enabled": true
+            },
+            {
+                "id": 7,
+                "name": "Preferences",
+                "key": "PREFERENCES",
+                "url": "/preferences",
+                "enabled": true
             }
         ],
         "sticky": true,

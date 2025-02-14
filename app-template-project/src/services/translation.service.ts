@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class TranslationService {
 
     private translations: { [key: string]: string } = {};
-    private currentLang = 'en';
+    private currentLang = new BehaviorSubject<string>('en');
+
 
     constructor(private http: HttpClient) {
-        this.loadTranslations(this.currentLang);
+        const savedLanguage = localStorage.getItem('appLanguage') || 'en';
+        this.loadTranslations(savedLanguage);
     }
 
     loadTranslations(lang: string): void {
@@ -17,7 +20,7 @@ export class TranslationService {
         this.http.get<{ [key: string]: string }>(url).subscribe({
             next: (translations) => {
                 this.translations = translations;
-                this.currentLang = lang;
+                this.currentLang.next(lang);
             },
             error: (err) => console.error(`Failed to load translations for ${lang}:`, err)
         });
@@ -27,10 +30,15 @@ export class TranslationService {
     }
 
     setLanguage(lang: string): void {
+        localStorage.setItem('appLanguage', lang);
         this.loadTranslations(lang);
     }
 
+    getCurrentLangObservable() {
+        return this.currentLang.asObservable();
+    }
+
     getCurrentLang(): string {
-        return this.currentLang;
+        return this.currentLang.getValue();
     }
 }

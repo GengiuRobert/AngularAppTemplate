@@ -1,0 +1,23 @@
+<div class="preferences-container">
+  <h2>{{translationService.translate('Preferences')}}</h2>
+
+  <form (submit)="savePreferences()">
+    <label for="language">{{translationService.translate('PrefLang')}}:</label>
+    <select id="language" [(ngModel)]="selectedLanguage" name="language" required class="styled-select">
+      <option *ngFor="let lang of availableLanguages" [value]="lang">
+        {{ lang }}
+      </option>
+    </select>
+
+    <button type="submit">{{translationService.translate('Save')}}</button>
+  </form>
+
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+</div>

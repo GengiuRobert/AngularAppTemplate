@@ -1,11 +1,30 @@
 <aside>
     <ul>
         @for(link of sidebarLinks(); track link.id) {
-            @if(link.enabled === true) {
-                <li>
-                    <a [href]="link.url">{{ link.name }}</a>
-                </li>
-            }
+        @if(link.enabled === true) {
+        <li>
+            <a [href]="link.url">{{ translateService.translate(link.name) }}</a>
+        </li>
+        }
         }
     </ul>
+
+    <div id="country-fetcher">
+        <button *ngIf="isAuthenticated" (click)="onLogOut()">{{ translateService.translate('Log Out') }}</button>
+        <button (click)="fetchCountries()">{{ translateService.translate('Fetch Countries') }}</button>
+        <div *ngIf="loading" class="spinner-container">
+            <div class="spinner"></div>
+        </div>
+        <div *ngIf="error" class="error">{{ error }}</div>
+
+        <div id="country-list" *ngIf="countries.length > 0">
+            <ul>
+                <li *ngFor="let country of countries">
+                    <strong>{{ country.name.common }}</strong>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
 </aside>
