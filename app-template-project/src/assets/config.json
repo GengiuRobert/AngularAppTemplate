@@ -42,6 +42,13 @@
                 "key": "SIGN_UP",
                 "url": "/signup",
                 "enabled": true
+            },
+            {
+                "id": 7,
+                "name": "Preferences",
+                "key": "PREFERENCES",
+                "url": "/preferences",
+                "enabled": true
             }
         ],
         "sticky": true,

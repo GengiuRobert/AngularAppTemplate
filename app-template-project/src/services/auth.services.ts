@@ -13,7 +13,6 @@ import {
 import { firebaseConfig } from '../app/firebase.config';
 import { TranslationService } from './translation.service';
 import { BehaviorSubject } from 'rxjs';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +27,7 @@ export class AuthService {
   authState$ = this.authStateSubject.asObservable();
 
 
-  constructor(private translateService: TranslationService, private router: Router) {
+  constructor(private translateService: TranslationService) {
     this.monitorAuthState();
   }
 
@@ -41,6 +40,10 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     return this.currentUser !== null;
+  }
+
+  getCurrentUser(): User | null {
+    return this.currentUser;
   }
 
   signup(email: string, password: string): Promise<any> {
