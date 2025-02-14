@@ -42,5 +42,10 @@
   "AuthRequiredMessage": "Please log in to continue.",
   "GoToLogin": "Go to Login",
   "Log Out": "Log Out",
-  "EmailNotVerified" : "Email not verified"
+  "EmailNotVerified" : "Email not verified",
+  "PrefLang": "Preferred Language",
+  "Save":"Save",
+  "PreferencesSaved":"Preferences saved successfully!",
+  "PreferencesSaveFailed":"Failed to save preferences."
+
 }

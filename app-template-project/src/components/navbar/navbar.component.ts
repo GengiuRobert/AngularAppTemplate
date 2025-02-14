@@ -24,9 +24,22 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.appService.initializeRouteTracking(this.router);
+
     this.authService.authState$.subscribe((authState) => {
       this.isAuthenticated = authState;
-      console.log('Auth state updated: ', authState);
+
+      if (this.isAuthenticated) {
+        this.authService.userPreferencesService
+          .getPreferences()
+          .then((preferences) => {
+            if (preferences?.language) {
+              this.appService.changeLanguage(preferences.language);
+            }
+          })
+          .catch((error) => {
+            console.error('Error loading preferences:', error);
+          });
+      }
     });
   }
 
@@ -36,6 +49,17 @@ export class NavbarComponent implements OnInit {
 
   setLanguage(languageCode: string): void {
     this.appService.changeLanguage(languageCode);
+
+    if (this.authService.getCurrentUser()?.uid) {
+      this.authService.userPreferencesService
+        .savePreferences({ language: languageCode })
+        .then(() => {
+          console.log('Language preference saved successfully.');
+        })
+        .catch((error) => {
+          console.error('Error saving language preference:', error);
+        });
+    }
   }
 
   get currentLanguage(): string {

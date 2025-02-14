@@ -13,6 +13,7 @@ import {
 import { firebaseConfig } from '../app/firebase.config';
 import { TranslationService } from './translation.service';
 import { BehaviorSubject } from 'rxjs';
+import { UserPreferencesService } from './preferences.services';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class AuthService {
   authState$ = this.authStateSubject.asObservable();
 
 
-  constructor(private translateService: TranslationService) {
+  constructor(private translateService: TranslationService, public userPreferencesService: UserPreferencesService) {
     this.monitorAuthState();
   }
 
@@ -48,25 +49,45 @@ export class AuthService {
 
   signup(email: string, password: string): Promise<any> {
     return createUserWithEmailAndPassword(this.auth, email, password)
-      .then((userCredential) => {
+      .then(async (userCredential) => {
         const user = userCredential.user;
-        return sendEmailVerification(user).then(() => {
-          return signOut(this.auth);
-        });
+        await sendEmailVerification(user);
+        await signOut(this.auth);
+
+        console.log('Verification email sent. User must verify email to continue.');
+      })
+      .catch((error) => {
+        console.error('Error during signup:', error);
+        throw error;
       });
   }
 
   login(email: string, password: string): Promise<any> {
     return signInWithEmailAndPassword(this.auth, email, password)
-      .then((userCredential) => {
+      .then(async (userCredential) => {
         const user = userCredential.user;
+  
         if (!user.emailVerified) {
-          signOut(this.auth);
+          await signOut(this.auth);
           throw new Error('email-not-verified');
         }
+  
+        try {
+          // Obține preferințele utilizatorului din Firebase
+          const preferences = await this.userPreferencesService.getPreferences();
+          if (preferences.language) {
+            this.translateService.setLanguage(preferences.language); // Setează limbajul
+            console.log('Preferences loaded and language set to:', preferences.language);
+          }
+        } catch (error) {
+          console.error('Error loading preferences:', error);
+          throw error;
+        }
+  
         return user;
       })
       .catch((error) => {
+        console.error('Error during login:', error);
         throw error;
       });
   }

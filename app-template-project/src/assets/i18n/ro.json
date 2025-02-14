@@ -42,5 +42,11 @@
   "AuthRequiredMessage": "Te rog autentifică-te pentru a continua.",
   "GoToLogin": "Mergi la Login",
   "Log Out": "Deconectare",
-  "EmailNotVerified" : "Email neconfirmat"
+  "EmailNotVerified" : "Email neconfirmat",
+  "PrefLang": "Limba Preferată",
+  "Save":"Salvează",
+  "PreferencesSaved":"Preferințele au fost salvate cu succes!",
+  "PreferencesSaveFailed":"Salvarea preferințelor a eșuat."
+
+
 }

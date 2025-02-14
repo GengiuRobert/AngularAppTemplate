@@ -42,5 +42,10 @@
     "AuthRequiredMessage": "Accedi per continuare.",
     "GoToLogin": "Vai al Login",
     "Log Out": "Disconnetti",
-    "EmailNotVerified" : "Email non verificata"
+    "EmailNotVerified" : "Email non verificata",
+    "PrefLang": "Lingua Preferita",
+    "Save":"Salvare",
+    "PreferencesSaved":"Preferenze salvate con successo!",
+    "PreferencesSaveFailed":"Salvataggio delle preferenze non riuscito."
+
 }
