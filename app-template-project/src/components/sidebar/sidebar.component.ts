@@ -4,6 +4,7 @@ import { TranslationService } from '../../services/translation.service';
 import { CountryService } from '../../services/country.service';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { AuthService } from '../../services/auth.services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -22,7 +23,8 @@ export class SidebarComponent implements OnInit {
   constructor(public appService: AppConfigService,
     public translateService: TranslationService,
     private countryService: CountryService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +33,19 @@ export class SidebarComponent implements OnInit {
 
   sidebarLinks = computed(() => this.appService.getSidebarLinks());
 
+  // onLogOut(): void {
+  //   this.successMessage = '';
+  //   this.errorMessage = '';
+
+  //   this.authService.logout()
+  //     .then(() => {
+  //       console.log("success");
+  //     })
+  //     .catch(error => {
+  //       console.error('Logout error:', error);
+  //     });
+  // }
+
   onLogOut(): void {
     this.successMessage = '';
     this.errorMessage = '';
@@ -38,6 +53,10 @@ export class SidebarComponent implements OnInit {
     this.authService.logout()
       .then(() => {
         console.log("success");
+
+        if (!this.authService.isAuthenticated() && this.router.url === '/services') {
+          this.router.navigate(['/auth-required'], { queryParams: { returnUrl: '/services' } });
+        }
       })
       .catch(error => {
         console.error('Logout error:', error);

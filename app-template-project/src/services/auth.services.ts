@@ -12,6 +12,8 @@ import {
 } from 'firebase/auth';
 import { firebaseConfig } from '../app/firebase.config';
 import { TranslationService } from './translation.service';
+import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -19,16 +21,21 @@ import { TranslationService } from './translation.service';
 
 export class AuthService {
 
-  constructor(private translateService: TranslationService) {
-    this.monitorAuthState();
-  }
-
   private auth = getAuth(initializeApp(firebaseConfig));
   private currentUser: User | null = null;
+  private authStateSubject = new BehaviorSubject<boolean>(this.isAuthenticated());
+
+  authState$ = this.authStateSubject.asObservable();
+
+
+  constructor(private translateService: TranslationService, private router: Router) {
+    this.monitorAuthState();
+  }
 
   monitorAuthState(): void {
     onAuthStateChanged(this.auth, (user) => {
       this.currentUser = user;
+      this.authStateSubject.next(this.isAuthenticated());
     });
   }
 
@@ -52,7 +59,7 @@ export class AuthService {
         const user = userCredential.user;
         if (!user.emailVerified) {
           signOut(this.auth);
-          throw new Error('email-not-verified'); 
+          throw new Error('email-not-verified');
         }
         return user;
       })
@@ -66,6 +73,7 @@ export class AuthService {
       .then(() => {
         this.currentUser = null;
         console.log('User successfully logged out');
+        this.authStateSubject.next(false);
       })
       .catch((error) => {
         console.error('Error during logout:', error);
